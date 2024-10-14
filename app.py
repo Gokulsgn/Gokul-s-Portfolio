@@ -223,6 +223,28 @@ st.markdown("""
         font-size: 4em;
         text-align: center;
     }
+        /* Responsive Styles */
+    @media only screen and (max-width: 600px) {
+        .header h1 {
+            font-size: 2.5em;
+        }
+        .header p {
+            font-size: 1.2em;
+        }
+        .section-title {
+            font-size: 2em;
+        }
+        .navbar a {
+            padding: 10px;
+            font-size: 1em;
+        }
+        .about-me {
+            font-size: 1em;
+        }
+        .footer {
+            padding: 10px;
+        }
+    }
     </style>
 """, unsafe_allow_html=True)
 
