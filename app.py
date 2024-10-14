@@ -240,7 +240,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Download Resume Button
-with open("C:/Users/gokul/OneDrive/Documents/GOKULNATH_S.pdf", "rb") as resume_file:  # Update the path to your resume file
+with open("GOKULNATH_S.pdf", "rb") as resume_file:  # Update the path to your resume file
     st.download_button(
         label="Download My Resume",
         data=resume_file,
