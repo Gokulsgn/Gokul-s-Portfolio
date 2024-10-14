@@ -262,7 +262,7 @@ with col1:
         </div>
     """, unsafe_allow_html=True)
 with col2:
-    st.image("C:/Users/gokul/Downloads/profile-pic (3).jpg", width=400,use_column_width=False)
+    st.image("profile-pic (5).png", width=400,use_column_width=False)
     
 
 # Time-based greeting
