@@ -226,6 +226,14 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Add meta tags for SEO and responsiveness
+st.markdown("""
+    <meta name="description" content="Portfolio of Gokulnath S., showcasing skills in Python, Machine Learning, and Trading Applications.">
+    <meta name="keywords" content="Gokulnath, Portfolio, Python, Machine Learning, Trading">
+    <meta name="author" content="Gokulnath S.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+""", unsafe_allow_html=True)
+
 # Navigation Bar
 st.markdown("""
     <div class="navbar">
