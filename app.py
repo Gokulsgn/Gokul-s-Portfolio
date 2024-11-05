@@ -1,5 +1,6 @@
 import streamlit as st
 import datetime
+import pytz
 
 # Set page config
 st.set_page_config(page_title="Gokulnath's Portfolio", page_icon=":star2:", layout="wide")
@@ -264,11 +265,14 @@ with col2:
     st.image("profile-pic (5).png", width=400,use_column_width=False)
     
 
-# Set the greeting message based on current time
-now = datetime.datetime.now()
+# Define the time zone (e.g., "Asia/Kolkata" for India)
+local_timezone = pytz.timezone("Asia/Kolkata")
+
+# Get current time in the specified time zone
+now = datetime.datetime.now(local_timezone)
 hour = now.hour
 
-# Customize greeting time ranges as needed
+# Determine greeting based on the hour
 if 5 <= hour < 12:  # Morning: 5 AM - 12 PM
     greeting = "Good Morning!"
 elif 12 <= hour < 17:  # Afternoon: 12 PM - 5 PM
