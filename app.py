@@ -222,40 +222,9 @@ st.markdown("""
         font-style: normal;
         font-size: 4em;
         text-align: center;
-    }
-        /* Responsive Styles */
-    @media only screen and (max-width: 600px) {
-        .header h1 {
-            font-size: 2.5em;
-        }
-        .header p {
-            font-size: 1.2em;
-        }
-        .section-title {
-            font-size: 2em;
-        }
-        .navbar a {
-            padding: 10px;
-            font-size: 1em;
-        }
-        .about-me {
-            font-size: 1em;
-        }
-        .footer {
-            padding: 10px;
-        }
-    }
+    }        
     </style>
-""", unsafe_allow_html=True)
-
-# Add meta tags for SEO and responsiveness
-st.markdown("""
-    <meta name="description" content="Portfolio of Gokulnath S., showcasing skills in Python, Machine Learning, and Trading Applications.">
-    <meta name="keywords" content="Gokulnath, Portfolio, Python, Machine Learning, Trading">
-    <meta name="author" content="Gokulnath S.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-""", unsafe_allow_html=True)
-
+    """, unsafe_allow_html=True)
 # Navigation Bar
 st.markdown("""
     <div class="navbar">
@@ -295,24 +264,27 @@ with col2:
     st.image("profile-pic (5).png", width=400,use_column_width=False)
     
 
-# Time-based greeting
+# Set the greeting message based on current time
 now = datetime.datetime.now()
 hour = now.hour
-if 6 <= hour < 12:
-    greeting = "Good Morning!"
-elif 12 <= hour < 18:
-    greeting = "Good Afternoon!"
-else:
-    greeting = "Good Evening!"
 
-# Greeting text with stylish font
+# Customize greeting time ranges as needed
+if 5 <= hour < 12:  # Morning: 5 AM - 12 PM
+    greeting = "Good Morning!"
+elif 12 <= hour < 17:  # Afternoon: 12 PM - 5 PM
+    greeting = "Good Afternoon!"
+elif 17 <= hour < 21:  # Evening: 5 PM - 9 PM
+    greeting = "Good Evening!"
+else:  # Night: 9 PM - 5 AM
+    greeting = "Good Night!"
+
+# Display greeting with your custom styles
 st.markdown(f"""
-            <br>
-            <br>
     <h2 class="greeting">
         {greeting} Welcome to my portfolio...
     </h2>
 """, unsafe_allow_html=True)
+
 
 # About Me Section
 st.markdown("<div class='section-title' id='about-me'>About Me</div>", unsafe_allow_html=True)
@@ -335,7 +307,7 @@ st.markdown("""
         <div class="skills-card">
             <img src="https://img.icons8.com/ios-filled/50/000000/web.png" alt="Web Development"/>
             <h4>Web Development</h4>
-            <p>Flask, Django, Deployment Tools (Docker, Heroku)</p>
+            <p>HTML, CSS, React, Django, Deployment Tools (Docker, Heroku)</p>
         </div>
         <div class="skills-card">
             <img src="https://img.icons8.com/ios-filled/50/000000/statistics.png" alt="Statistics"/>
