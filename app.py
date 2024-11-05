@@ -17,7 +17,7 @@ st.markdown("""
         padding-bottom: 60px;
     }
     .about-me {
-        font-family: 'Frank Ruhl Libre', serif;  /* Use the same font */
+        font-family: 'Frank Ruhl Libre', serif;  /* Use the same  */
         font-size: 1.2em;  /* Adjust the font size as needed */
         color: #333;  /* Set the text color */
         margin: 20px 0;  /* Add some margin */
