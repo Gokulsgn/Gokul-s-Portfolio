@@ -2,8 +2,11 @@ import streamlit as st
 import datetime
 import pytz
 
+
+
 # Set page config
 st.set_page_config(page_title="Gokulnath's Portfolio", page_icon=":star2:", layout="wide")
+
 
 # Custom CSS for modern design and font
 st.markdown("""
@@ -116,20 +119,27 @@ st.markdown("""
     }
     .skills-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(5, minmax(150px, 1fr));
         gap: 20px;
         justify-content: center;
         margin: 20px 0;
     }
     .skills-card {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        padding: 20px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
+         width: 250px;
+            height: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            color: white;
+            background-size: cover;
+            background-position: center;
     }
+    .bmi-project {
+    background-image: url("https://media-hosting.imagekit.io//e8074d2e0bcc491e/efa66f1cf1.jpg?Expires=1833526865&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=z3I4-Kbb0xWQYB~1zWSdfH57U33nYmDcg4c5oa~pVBObMnMh6k2gFxKE6ZTKNfATievv0kIImcqMs6N9OVkNLcVnM40cZzAmvqezPElwK12F0Dgp7JxU7r0tFgANVZQMjEI57rAohGzBnmBFnee1vSX-zrqu0CIf4hLmFqAeAQXNkbDchtUPxNj6OQUUjwSiuElRmka2Vpgf6K8e4PaZSJxv6geSs~R5r13Q18vHDPJdG6aiiKeDUsb9ehAgWBLH3hr48T6KFC4Hrg5AknHCVtTOaAwrKyb5ZLm8IHQbBfGfcm0q1wHy0RDcf3eJ2gKXuHsRpM8JmwCCnASr-lizgw__");
+}
     .skills-card:hover {
         transform: scale(1.05);
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
@@ -240,7 +250,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Download Resume Button
-with open("Gokulnath S Resume.pdf", "rb") as resume_file:  # Update the path to your resume file
+with open("Gokulnath S - Resume.pdf", "rb") as resume_file:  # Update the path to your resume file
     st.download_button(
         label="Download My Resume",
         data=resume_file,
@@ -301,27 +311,27 @@ st.markdown("""
         <div class="skills-card">
             <img src="https://img.icons8.com/ios-filled/50/000000/machine-learning.png" alt="Machine Learning"/>
             <h4>Machine Learning</h4>
-            <p>Supervised & Unsupervised Learning, Deep Learning, NLP</p>
+            <p>Supervised & Unsupervised Learning, Deep Learning, NLP, Reinforcement Learning</p>
         </div>
         <div class="skills-card">
             <img src="https://img.icons8.com/ios-filled/50/000000/graph.png" alt="Data Visualization"/>
-            <h4>Data Visualization</h4>
-            <p>Matplotlib, Seaborn, Plotly</p>
+            <h4>Data Handling & Visualization</h4>
+            <p>SQL, Pandas, NumPy, Power BI, Matplotlib, Seaborn, Git, GitHub, Excel, Google Sheets</p>
         </div>
         <div class="skills-card">
             <img src="https://img.icons8.com/ios-filled/50/000000/web.png" alt="Web Development"/>
-            <h4>Web Development</h4>
-            <p>HTML, CSS, React, Django, Deployment Tools (Docker, Heroku)</p>
+            <h4>Tools & Technologies</h4>
+            <p>Streamlit, Google Gemini AI, TensorFlow, PyTorch, Scikit-learn, OpenAI API, LangChain,HTML, CSS, React, Django, Deployment Tools (Docker, Heroku)</p>
         </div>
         <div class="skills-card">
             <img src="https://img.icons8.com/ios-filled/50/000000/statistics.png" alt="Statistics"/>
-            <h4>Mathematics & Statistics</h4>
-            <p>Probability, Linear Algebra, Calculus</p>
+            <h4>AI & Data Science</h4>
+            <p>Predictive Analytics, Statistical Modeling, Feature Engineering, Data Preprocessing, Explainable AI</p>
         </div>
         <div class="skills-card">
-            <img src="https://img.icons8.com/ios-filled/50/000000/code.png" alt="Programming Languages"/>
-            <h4>Programming Languages</h4>
-            <p>Python, JavaScript, SQL</p>
+            <img src="https://img.icons8.com/ios-filled/50/000000/python.png" alt="Programming Languages"/>
+            <h4>Programming & Libraries</h4>
+            <p>Python, OpenCV, BeautifulSoup, Selenium, FastAPI, Flask, NLTK, SpaCy</p>
         </div>
     </div>
 """, unsafe_allow_html=True)
@@ -357,72 +367,63 @@ with col3:
 
 with col4:
     st.markdown(content4, unsafe_allow_html=True)
+
+    
 # Projects Section
 st.markdown("<div class='section-title' id='projects'>Projects</div>", unsafe_allow_html=True)
 
-# Secondary Navigation Bar for Project Categories
-st.markdown("""
-    <div class="secondary-navbar">
-        <a href="#python-mini-projects">Python Mini Projects</a>
-        <a href="#ml-projects" class="active">Machine Learning</a>
-        <a href="#DL-projects">Deep Learning</a>
-    </div>
-""", unsafe_allow_html=True)
-
-
-# Skills Section
-st.markdown("<div class='section-title' id='python-mini-projects'>Python Projects</div>", unsafe_allow_html=True)
+# Combined Project Cards with Images and Links
 st.markdown("""
     <div class="skills-container">
-        <div class="skills-card">
-            <h4>BMI Calculator & Health Stats Visualizer</h4>
-            <p>Created an interactive quiz game designed to test users' knowledge about cricketer Virat Kohli through a series of engaging multiple-choice questions. Developed a question bank covering various aspects of Kohli's career, achievements, and personal milestones to ensure diverse quiz content. Designed the game interface with Streamlit, allowing users to start the quiz, select answers, and track their scores in real-time. Incorporated functionality to provide immediate feedback on answers, enhancing user engagement and learning. Implemented a scoring system that tracks correct answers and displays the final score at the end of the quiz. Added a timer feature to increase challenge and excitement during the quiz. Documented the project with detailed explanations of the quiz structure and design decisions. Shared the game on GitHub, encouraging cricket fans to contribute more questions and improvements for future iterations.<p>
+        <div class="skills-card bmi-project">
+            <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">BMI Calculator & Health Stats Visualizer</h4>
+            <p style="color: black;">This Streamlit app predicts customer churn using a Random Forest model, with data preprocessing, training, and a prediction interface for user inputs.</p>
+            <a href="https://document-genie-using-rag-framwork-aupgjwt9u6avwadhvlhdux.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
         </div>
-        <div class="skills-card">
-            <h4>Virat Kohli Quiz Game</h4>
-            <p>Created an interactive quiz game designed to test users' knowledge about cricketer Virat Kohli through a series of engaging multiple-choice questions. Developed a question bank covering various aspects of Kohli's career, achievements, and personal milestones to ensure diverse quiz content. Designed the game interface with Streamlit, allowing users to start the quiz, select answers, and track their scores in real-time. Incorporated functionality to provide immediate feedback on answers, enhancing user engagement and learning. Implemented a scoring system that tracks correct answers and displays the final score at the end of the quiz. Added a timer feature to increase challenge and excitement during the quiz. Documented the project with detailed explanations of the quiz structure and design decisions. Shared the game on GitHub, encouraging cricket fans to contribute more questions and improvements for future iterations.<p>
+        <div class="skills-card bmi-project">
+            <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">AI-Resume Analyzer</h4>
+            <p style="color: black; ">This Streamlit app analyzes resumes using Google Gemini AI, extracting text and comparing it with job descriptions to provide skill improvement suggestions.</p>
+            <a href="https://document-genie-using-rag-framwork-aupgjwt9u6avwadhvlhdux.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
         </div>
-        <div class="skills-card">
-            <h4>Weather App</h4>
-            <p>Built a comprehensive weather application that provides real-time updates based on user-entered locations, displaying current weather conditions, forecasts, and additional climate data. Integrated a reliable weather API to fetch up-to-date information, including temperature, humidity, wind speed, and forecasts for upcoming days. Designed an intuitive user interface using Streamlit, allowing users to easily input their location for accurate weather updates. Implemented data visualization features to present weather trends graphically, such as temperature variations over a week. Included options for users to save favorite locations for quick access to weather updates. Enhanced user experience by providing background information on weather conditions and tips for severe weather preparedness. Documented the development process, focusing on API integration and data visualization techniques. Shared the project on GitHub, encouraging feedback for future improvements and enhancements.<p>
+        <div class="skills-card bmi-project">
+            <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">Document Genie using RAG Framwork</h4>
+            <p style="color: black; ">This Streamlit app, Document Genie, uses Google's Gemini-PRO with the RAG framework to analyze PDFs. It extracts text and provides precise, context-aware answers</p>
+            <a href="https://document-genie-using-rag-framwork-aupgjwt9u6avwadhvlhdux.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
         </div>
-    </div>
-""", unsafe_allow_html=True)
-
-# Skills Section
-st.markdown("<div class='section-title' id='ml-projects'>Machine Learning Projects</div>", unsafe_allow_html=True)
-st.markdown("""
-    <div class="skills-container">
-        <div class="skills-card">
-            <h4>Iris Flower Classification</h4>
-            <p>Developed a classification model to identify iris flower species using the Iris dataset, focusing on petal and sepal dimensions. Implemented K-Nearest Neighbors (KNN) and Decision Trees to evaluate their effectiveness in species prediction. Preprocessed the dataset by addressing missing values and standardizing feature scales for optimal performance. Trained both models and compared their accuracy and computational efficiency. Visualized classification results using confusion matrices and performance metrics for detailed insights. Created a user-friendly Streamlit app that allows users to input dimensions and receive predictions. Included educational content to explain the features and methods used in classification. Documented the project comprehensively and shared it on GitHub for community collaboration and feedback.</p>
+        <div class="skills-card bmi-project">
+            <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">Spotify Track/Playlist Info Finder</h4>
+            <p style="color: black; ">This Streamlit app fetches Spotify track/playlist details, visualizes artist popularity with a pie chart, and allows users to download data in CSV or Excel format.</p>
+            <a href="https://spotify-dataproject-sfxhvaq8gwrhhpje6py4ge.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
         </div>
-        <div class="skills-card">
-            <h4>House Price Prediction</h4>
-            <p>Designed a predictive model using linear regression to estimate house prices based on key features such as size, location, and number of rooms. Collected and preprocessed a dataset with comprehensive housing features, handling missing values and encoding categorical variables for effective analysis. Trained the model and evaluated its performance using metrics like Mean Absolute Error (MAE) and R-squared values. Developed an interactive Streamlit application that allows users to input house features and receive real-time price predictions. Visualized the results through scatter plots to analyze the distribution of predicted prices. Incorporated explanations of the model's predictions to enhance user understanding. Documented the process, emphasizing feature selection and engineering in regression analysis. Shared the project on GitHub for collaboration and feedback from the developer community.</p>
+        <div class="skills-card bmi-project">
+            <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">Personal Finance Manager</h4>
+            <p style="color: black;">This Personal Finance Manager App built with Streamlit allows users to track expenses, set budgets, and analyze financial data in an interactive way.</p>
+            <a href="https://personalfinance-wkmio3s6qvwifa3zi4qjwf.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
         </div>
-        <div class="skills-card">
-            <h4>Customer Segmentation with K-Means</h4>
-            <p>Implemented K-Means clustering to segment customers based on purchasing behavior and preferences. Collected and preprocessed transactional data, identifying key features such as purchase frequency and average spending. Applied K-Means clustering and determined the optimal number of clusters using the elbow method and silhouette scores. Developed visualizations to illustrate customer distribution and behavior patterns before and after clustering. Created a user-friendly Streamlit application that allows businesses to input customer data and view segmentation results interactively. Provided insights into how each segment can be targeted effectively for marketing campaigns. Documented the project, highlighting the significance of customer segmentation in enhancing business strategies. Shared the code on GitHub for peer review and potential collaboration.</p>
+        <div class="skills-card bmi-project">
+            <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">Customer Churn Prediction App</h4>
+            <p style="color: black;">This Customer Churn Prediction App uses Random Forest Classifier to predict whether a customer is likely to churn based on key attributes.</p>
+            <a href="https://customer-churn-prediction-app-nlg6hhw4mkgvq8gwu2uchb.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
         </div>
-    </div>
-""", unsafe_allow_html=True)
-
-# Skills Section
-st.markdown("<div class='section-title' id='DL-projects'>Deep Learning Projects</div>", unsafe_allow_html=True)
-st.markdown("""
-    <div class="skills-container">
-        <div class="skills-card">
-            <h4>Image Classification (CIFAR-10)</h4>
-            <p>Developed a Convolutional Neural Network (CNN) model to classify images into 10 categories, including airplanes, cars, and various animals, using the CIFAR-10 dataset. Preprocessed the dataset through normalization and data augmentation techniques to improve model robustness. Built and trained the CNN architecture with multiple layers, including convolutional, pooling, and fully connected layers. Evaluated model performance using metrics such as accuracy and loss, achieving high classification accuracy on the test set. Visualized model performance through confusion matrices and classification reports for detailed insights. Created a Streamlit application to allow users to upload images for real-time classification. Documented the project comprehensively, explaining the design choices and methodologies used. Shared the project on GitHub to promote collaboration and receive community feedback.<p>
+        <div class="skills-card bmi-project">
+            <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">Wine Quality Prediction App</h4>
+            <p style="color: black;">This Wine Quality Prediction App built with Streamlit allows users to enter various wine attributes and predict whether the wine is of good or bad quality using a pre-trained machine learning model.</p>
+            <a href="https://wineprediction-nwwk4efidbvfdjmyylypng.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
         </div>
-        <div class="skills-card">
-            <h4>Sentiment Analysis with RNN</h4>
-            <p>Designed a sentiment analysis model to analyze movie reviews and classify them as positive or negative using Recurrent Neural Networks (RNNs) or Long Short-Term Memory (LSTM) networks. Collected and preprocessed a dataset of movie reviews, performing text cleaning and tokenization for effective input representation. Built the RNN architecture, utilizing embedding layers and LSTM cells to capture contextual information in the text. Trained the model on labeled data, using accuracy and loss metrics to evaluate performance. Employed techniques like dropout for regularization and to prevent overfitting during training. Visualized training and validation loss and accuracy to monitor model performance. Developed a user-friendly Streamlit application for users to input movie reviews and receive sentiment predictions. Documented the project, emphasizing the importance of NLP techniques and deep learning in sentiment analysis, and shared it on GitHub for further exploration.<p>
+        <div class="skills-card bmi-project">
+            <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">BMI Calculator & Health Stats Visualizer</h4>
+            <p style="color: black; ">This Streamlit app is a stylish BMI Calculator & Health Stats Visualizer that computes BMI, categorizes it, and provides health recommendations with a bar chart.</p>
+            <a href="https://calculator-jpl3lfgg9rlbjrxbd5e5k7.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
         </div>
-        <div class="skills-card">
-            <h4>Predicting Loan Approval with ANN</h4>
-            <p>Developed an Artificial Neural Network (ANN) model to predict loan approval based on applicant features such as income, credit score, and employment history. Collected and preprocessed a dataset containing relevant features, handling missing values and normalizing data for effective training. Built the ANN architecture, including input, hidden, and output layers, using activation functions like ReLU and sigmoid for non-linearity. Trained the model on labeled data, utilizing techniques like backpropagation and dropout for optimization and regularization. Evaluated model performance using classification metrics, including accuracy, precision, and recall. Created a Streamlit application that allows users to input their details and receive real-time predictions on loan approval. Documented the project comprehensively, explaining the model’s structure, training process, and evaluation methods. Shared the project on GitHub to encourage collaboration and feedback from the data science community<p>
+        <div class="skills-card bmi-project">
+            <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">Quiz Game</h4>
+            <p style="color: black; ">This Streamlit app is an interactive Virat Kohli Quiz Game where users answer multiple-choice questions about the cricket legend. It provides immediate feedback on each answer and calculates the final score.</p>
+            <a href="https://quizgame-x5ceijnhwxbdbzxuembqq4.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
+        </div>
+        <div class="skills-card bmi-project">
+            <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">Weather App</h4>
+            <p style="color: black; ">This Streamlit app fetches real-time weather data from OpenWeatherMap, displaying temperature, conditions, humidity, wind speed, and local time in a stylish format.</p>
+            <a href="https://weatherapp-brczgqpy9nmpvgy8h3xujy.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
         </div>
     </div>
 """, unsafe_allow_html=True)
