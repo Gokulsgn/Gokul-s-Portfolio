@@ -383,7 +383,7 @@ st.markdown("""
         <div class="skills-card bmi-project">
             <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">AI-Resume Analyzer</h4>
             <p style="color: black; ">This Streamlit app analyzes resumes using Google Gemini AI, extracting text and comparing it with job descriptions to provide skill improvement suggestions.</p>
-            <a href="https://document-genie-using-rag-framwork-aupgjwt9u6avwadhvlhdux.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
+            <a href="https://ai-resume-analyzer-nfguuxvrzwfytne2cjfber.streamlit.app/" target="_blank" style="color: skyblue;text-shadow: 2px 2px 4px #000000; text-decoration:none;">View Project</a>
         </div>
         <div class="skills-card bmi-project">
             <h4 style="color: #FFCC00; text-shadow: 2px 2px 4px #000000;">Document Genie using RAG Framwork</h4>
